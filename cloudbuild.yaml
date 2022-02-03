@@ -1,0 +1,9 @@
+    steps:
+    - name: 'gcr.io/cloud-builders/docker'
+      args: [ 'build', '-t', 'gcr.io/myproject/myimage', '.' ]
+    logsBucket: 'gs://buildstorage'
+    options:
+      logging: GCS_ONLY
+    env:
+   - 'CLOUDSDK_COMPUTE_REGION=europe-west2'
+   - 'CLOUDSDK_COMPUTE_ZONE=europe-west2-c'
